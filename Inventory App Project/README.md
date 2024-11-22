@@ -1,21 +1,34 @@
-## Project #1
-Give a high-level overview of the project purpose
-- Questions to consider:
-    - What are the users?
-    - What job does it form for them?
-    - What inspired you to make it?
-    - What features are the most important?
-- STAR Interview Questions:
-    - (Situation) Describe the application and why you created this program
-    - (Task) Describe the overall structure of your application and the design process prior to building the program
-    - (Action) Explain the code you wrote to achieve your desired result
-    - (Result) Showcase your final application with its functionality
-- Include relevant screenshots
+## Inventory App
+
+An full-stack inventory application using react and node
+
+### Situation<br>
+The goal of this application was to demonstrate my new knowledge for both front end and back end technologies. This was a solo project so everything you see was built and designed by me.
+
+### Task
+For this project, since it was full stack, I built out the [Server](https://github.com/Keffdu/final-portfolio/blob/main/Deployment%20Project/packages/backend/Dockerfile)
+![SS1](./assets/SS1.png)<br>
+the dockerfile can be executed by first running the commands <br>
+```yarn install```
+```yarn tsc```
+```yarn build:backend```
+<br>
+following those you can run ```yarn build-image``` which will get you running locally
+
+### Action
+There were several areas in the repo that contributed, and I ran into a lot of challenges during this project with trying to get everything configured locally to run properly, the hardest part was connecting github authentication and making sure it is passing the secrets correctly.
 
 ## Technologies
-- List all technologies and versions here
-- Include dependencies and versions
-- Note any deployment tools as well
+- React.js
+- React Hooks (useState)
+- Jest
+- HTML
+- CSS
+- Node.js
+- Express
+- SQL
+- Sqlite3
+- ENVIRONMENTAL VARIABLES with dotenv
 
 ## Competencies
 ### JF XX.XX
