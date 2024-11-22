@@ -6,7 +6,6 @@ A front end application that utilizes a free API to fetch historic art via ```ht
 The goal of this application is to work with an external API and build a UI that allows users to control the data they see as well as save art that they like. This app has features for accessibility in mind such as light/dark mode as well as a responsive view to any device. 
 
 ### Task
-
 The team wanted to design a clean and intuitive UI that was easy to interact with.<br>
 Part of my tasks was to create the design and logic for:
 - [FavortieCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
@@ -24,31 +23,31 @@ There were several areas in the repo that contributed, I will go be discussing t
 #### [Components](https://github.com/Keffdu/final-portfolio/tree/main/Front%20End%20Project/src/components)
 - ##### [App Root](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/App.jsx)
 Here is where most of the high level configurations are set - like the design theme for the app
-![SS1](./assets/SS1.png)
+![SS1](./assets/SS1.png)<br>
 Or where a lot of the high level state is managed to be passed around and inital ```useEffect()``` is called to pull in the data
-![SS2](./assets/SS2.png)
+![SS2](./assets/SS2.png)<br>
 I also wrote the logic and to handle removing and adding favorites to your collection as well as the JSX to give the root level of the application
-![SS3](./assets/SS3.png)
+![SS3](./assets/SS3.png)<br>
 Frontend View:
-![SS4](./assets/SS4.png)
+![SS4](./assets/SS4.png)<br>
 - ##### [ArtCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/ArtCard.jsx)
 For the ArtCard I contributed by adding CSS for styling, as well as additional logic to handle adding/removing a favorited item
-![SS5](./assets/SS5.png)
-![SS6](./assets/SS6.png)
+![SS5](./assets/SS5.png)<br>
+![SS6](./assets/SS6.png)<br>
 now to see what happens when you click to favorite an item
 
 - ##### [FavortieList](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteList.jsx)
 when you click to favorite a piece of art, it gets stored in state as an array of ```favorites```. those are then mapped over and each favorite then returns a ```FavoriteCard``` which you would see as a list in ```/favorties``` route.
-![SS8](./assets/SS8.png)
+![SS8](./assets/SS8.png)<br>
 - ##### [FavortieCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
 when FavoriteCard is called on each item, it returns this piece of JSX to be rendered in the list, populated with some data from the item.
-![SS7](./assets/SS7.png)
+![SS7](./assets/SS7.png)<br>
 ##### Frontend View Favorite List:
-![SS9](./assets/SS9.png)
+![SS9](./assets/SS9.png)<br>
 ##### Single Favorite Card:
-![SS10](./assets/SS10.png)
+![SS10](./assets/SS10.png)<br>
 - #### Logic for handling favorites
-![SS11](./assets/SS11.png)
+![SS11](./assets/SS11.png)<br>
 - you can see that ```removeFavorite``` takes a parameter of ```deleteArt``` which is the expected item to remove from the favorites list, so we filter over the favorites array to search for an object id that matches the one we passed in to the function, we then set the updated array as the new state and render it.
 - for ```handleFavorites``` I first had to check whether or not that item already existed in the favorites array or not - because we cant have an item favorited twice. if the item comes back as being valid, we update the existing state to include the new item.
 
@@ -66,108 +65,24 @@ when FavoriteCard is called on each item, it returns this piece of JSX to be ren
 If you would like to run this app locally you can clone this repo and cd into ```cd Front\ End\ Project``` which will take you to the root. from there run ```npm i``` to install followed by ```npm run build``` and finally  ```npm run dev```
 
 it will open a browser for you, from there you will see the landing page and can navigate freely from there.
-![SS17](./assets/SS17.png)
+![SS17](./assets/SS17.png)<br>
 
 ## Competencies
 ### 2.3 - Can develop effective user interfaces
 - for this project the main focus was on building a clean and functional UI that is both responsive and accessible.
 - Through utilizing standardized libraries such as [Material UI](https://mui.com/material-ui/) I was able to build a more uniform components and intuitive layout for the user which in turn allows for a better UX
-![SS4](./assets/SS4.png)
+![SS4](./assets/SS4.png)<br>
 - from there I added the ability to toggle from light or dark mode - to add to accessibility for the web page 
-![SS13](./assets/SS13.png)
-![SS3](./assets/SS3.png)
+![SS13](./assets/SS13.png)<br>
+![SS3](./assets/SS3.png)<br>
 ### 2.5 - Can implement a responsive User Interface
 - Through using MUI as well as CSS Flex, I built our application to be responsive regardless of the browser size or device.
 - This allows more users to interact with the application as well as leads to an overall better UX.
 - the use of Flex and its properties ```flexWrap``` allows the items to overflow within the FavortiesList component
-![SS14](./assets/SS14.png)
+![SS14](./assets/SS14.png)<br>
 ### Example of Flex Wrap:
-![SS15](./assets/SS15.png)
+![SS15](./assets/SS15.png)<br>
 here you can see the list of favorites is being wrapped to the bottom row since the whole list cant fit in one row, if we didnt use this half of our favorites would not be visible.
 
 Then with only 4 favorites you can see how that second row behaves. since we have flew wrap and we also set ```justifyContent``` to space-evenly that is causing the 4th item to be centered horizontally on the page.
-![SS16](./assets/SS16.png)
-=======
-The team wanted to design a clean and intuitive UI that was easy to interact with. Part of my tasks was to create the [model](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/models/Instrument.js), [seed data](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/seedData.js), [seed file](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/seed.js), [db](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/db.js), and some contributions to the routes. All of these files are housed in the [server folder](https://github.com/Keffdu/final-portfolio/tree/main/Back%20End%20Project/server).
-
-Our main focus was on the [routes](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/routes/instrument/instrument.js) and which should be protected, or what type of information the end user might find valuable. There was a lot of collaboration and brainstorming when going through the process of building our [routes](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/routes/instrument/instrument.js) as well as the [seed data](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/seedData.js) and how the object should be built.
-
-### Action
-There were several areas in the repo that contributed, I will go through my contributions to the routes, as well as the models files.
-- #### [Routes](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/routes/instrument/instrument.js)
-For our routes we decided we would want full CRUD operations on all instruments, requiring authorization for reading data.
-here is an example for the standard ```/``` ```GET``` route that will return all instruments.
-
-![SS1](./assets/SS1.png)
-
-you can see ```requiresAuth()``` is running which we are importing from ```express-openid-connect```
-
-after the user is authorized, we get all the instruments, decrypt the price and send the object as a response.
-
-another route id like to touch on is the ```CREATE``` route
-
-![SS2](./assets/SS2.png)
-
-we built it so that there are validations done before the new instrument is created as well as encryption of the price, and handles the errors if there are any. IF there are no errors, a new instrument will be created and returned in the response
-
-- #### [Model](https://github.com/Keffdu/final-portfolio/blob/main/Back%20End%20Project/server/models/Instrument.js)
-The idea for designing the model was to have a simple object that would store valuable data about an instrument for the end user.
-
-![SS3](./assets/SS3.png)
-
-with the use of ```DataTypes``` I was able to create a scheme and define what the expected data types would be for all the attributes.
-
-### Technologies
-- Node.js
-- Express
-- SQL
-- Sqlite3
-- JWT
-- ENVIRONMENTAL VARIABLES with dotenv
-- POSTMAN
-- SEQUELIZE
-- HTML
-- CSS
-- BCRYPT
-- JEST
-
-## Competencies
-### 3.2 - Can explain the principles and uses of relational and non-relational databases
-- for this project we built a relational database, instead of a non-relational because we needed a simple schema and were looking for structured data.
-- with this in mind we chose to build a relational database with Sqlite3
-- I created the db file, and set up an instance to initialize the db
-![SS4](./assets/SS4.png)
-- from there I imported ```db``` into the instrument model and defined what the schema will look like and export that as an ```Instrument``` that can be acted on
-![SS3](./assets/SS3.png)
-- This allowed us to easily manipulate and serve up the data for this back end project
-### 3.4 - Can create a logical and maintainable codebase
-- A codebase can quickly become out of hand if maintenance is not done regularly. In this project, through the development phase there were multiple people working in the repo and committing/merging code, so comments were left, and things were not always refactored as much as they could have been.
-- I went through before submitting the project and removed any left over ```console.log()```'s and commented out code
-- I also made sure to following the separation of concerns and keeping files to only one task
-- This allowed for a more readable code base as well as an easier time for troubleshooting.
-
-### JF 3.5 - Can apply algorithms, logic and data structures
-- Creating the seed data i had to build a data structure to store the data, as well as utilizing algorithms such as ```.find()```, and logical operators for conditional statements
-- for the seed data I created an Array, that would store n instruments.
-![SS5](./assets/SS5.png)
-- each object inside the array would be one instrument, with all the necessary data needed
-- in order to use this data or search through it, we had to use the ```.find()``` algorithm to iterate over each object within the array searching for the matching ```id```
-![SS6](./assets/SS6.png)
-### JF 1.5 - Can work effectively and contribute appropriately on a team to produce software
-- Throughout this project and many others I have worked on a team with other developers, this requires great communication and collaboration, through things like version control and also all coming together to agree on one idea
-- There were many daily or weekly meetings set up with the team to check in and make sure progress was being made and that there were no blockers.
-- We also set up a GitHub projects board where we managed tasks to make sure no duplicate work was being done
-### JF 1.7 - Can follow company, team or client approaches to continuous integration, version and source control
-- I have fully adopted the use of Git, GitHub, and GitHub Actions for version control and part of CI. 
-- I know the best practices for cloning and working in a repo.  I have demonstrated how to create feature branches and open a pull request. 
-- Within this project specifically and all other projects, GitHub has been used, and all work that i have done was done on a feature branch that went through the whole PR process. 
-- I have also participated in code reviews for other PR's, created action/workflows in multiple projects both for American Express and through Multiverse
-
-
-### JF XX.XX
-- List the full text of the job function first
-- Describe a situation where you demonstrated  this job function.
-- Summarize the actions you took to accomplish the goal. 
-- Emphasize the results of this action for your team or your learning. 
-- Connect the competentcy to this project
-
+![SS16](./assets/SS16.png)<br>
