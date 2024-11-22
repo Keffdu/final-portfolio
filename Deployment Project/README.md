@@ -67,7 +67,7 @@ when FavoriteCard is called on each item, it returns this piece of JSX to be ren
 
 For a full demo of the project, watch the video linked below
 
-youtube.com/watch?v=bwmNdO9Q-OI&ab_channel=Kevindutzy
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bwmNdO9Q-OI?si=jPQwiWlmQNwX2kUO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Competencies
 ### JF 1.1
