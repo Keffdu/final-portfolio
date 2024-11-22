@@ -2,14 +2,25 @@
 
 If you would like to run this app locally you can clone this repo and cd into ```cd Deployment\ Project``` which will take you to the root. from there run ```yarn install``` to install followed by ```yarn run dev``` which will start up your local browser as well as the back end.
 
+you can also build through docker below
+
 This project was an MVP created to explore [Backstage](https://backstage.io/docs/overview/what-is-backstage) framework possibilities and apply the concepts of CI/CD
 
 ### Situation<br>
-The goal of this application was to challenge ourselves to learn a new technology - in this case Backstage, and build an MVP of a software catalog, along with adding GitHubActions, and configuring Docker containers.
+The goal of this application was to challenge ourselves to learn a new technology - in this case Backstage, and build an MVP of a software catalog, along with adding GitHubActions, and deploying through Docker
 
 ### Task
 For this project, since it was deployment, we werent as concerned with the UI as much as we were with the configurations for linking Github accounts for authenticating users, or setting up the docker configuration, adding Github Actions, etc. Luckily Backstage by default comes with a prebuilt UI linked to a backend service.<br>
-Part of my tasks were to create the design and logic for:
+Part of my tasks were to: 
+- configure the [Dockerfile](https://github.com/Keffdu/final-portfolio/blob/main/Deployment%20Project/packages/backend/Dockerfile)
+![SS1](./assets/SS1.png)
+the dockerfile can be executed by first running the commands <br>
+```yarn install```
+```yarn tsc```
+```yarn build:backend```
+<br>
+following those you can run ```yarn build-image``` which will get you running locally
+
 - [FavortieCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
 - [FavoriteList](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
 - [Header](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/Header.jsx)
