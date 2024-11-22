@@ -13,7 +13,7 @@ The goal of this application was to challenge ourselves to learn a new technolog
 For this project, since it was deployment, we werent as concerned with the UI as much as we were with the configurations for linking Github accounts for authenticating users, or setting up the docker configuration, adding Github Actions, etc. Luckily Backstage by default comes with a prebuilt UI linked to a backend service.<br>
 Part of my tasks were to: 
 - configure the [Dockerfile](https://github.com/Keffdu/final-portfolio/blob/main/Deployment%20Project/packages/backend/Dockerfile)
-![SS1](./assets/SS1.png)
+![SS1](./assets/SS1.png)<br>
 the dockerfile can be executed by first running the commands <br>
 ```yarn install```
 ```yarn tsc```
