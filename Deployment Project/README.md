@@ -1,30 +1,75 @@
-## Project #3
-Give a high-level overview of the project purpose
-- Questions to consider:
-    - What are the users?
-    - What job does it form for them?
-    - What inspired you to make it?
-    - What features are the most important?
-- STAR Interview Questions:
-    - (Situation) Describe the application and why you created this program
-    - (Task) Describe the overall structure of your application and the design process prior to building the program
-    - (Action) Explain the code you wrote to achieve your desired result
-    - (Result) Showcase your final application with its functionality
-- Include relevant screenshots
+## BackStage - Deployment Project
+
+If you would like to run this app locally you can clone this repo and cd into ```cd Deployment\ Project``` which will take you to the root. from there run ```yarn install``` to install followed by ```yarn run dev``` which will start up your local browser as well as the back end.
+
+This project was an MVP created to explore [Backstage](https://backstage.io/docs/overview/what-is-backstage) framework possibilities and apply the concepts of CI/CD
+
+### Situation<br>
+The goal of this application was to challenge ourselves to learn a new technology - in this case Backstage, and build an MVP of a software catalog, along with adding GitHubActions, and configuring Docker containers.
+
+### Task
+For this project, since it was deployment, we werent as concerned with the UI as much as we were with the configurations for linking Github accounts for authenticating users, or setting up the docker configuration, adding Github Actions, etc. Luckily Backstage by default comes with a prebuilt UI linked to a backend service.<br>
+Part of my tasks were to create the design and logic for:
+- [FavortieCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
+- [FavoriteList](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
+- [Header](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/Header.jsx)
+
+Our main focus for this project was to integrate an external API and build a UI around it that is intuitive to use, provides accessibility features for users, navigation, displays dynamic routes, and has some sort of filtering when it comes to the data being displayed.
+
+### Action
+There were several areas in the repo that contributed, I will go be discussing the components I built, as well as the logic for the favorite feature and app root
+#### [Components](https://github.com/Keffdu/final-portfolio/tree/main/Front%20End%20Project/src/components)
+- ##### [App Root](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/App.jsx)
+Here is where most of the high level configurations are set - like the design theme for the app
+![SS1](./assets/SS1.png)<br>
+Or where a lot of the high level state is managed to be passed around and inital ```useEffect()``` is called to pull in the data
+![SS2](./assets/SS2.png)<br>
+I also wrote the logic and to handle removing and adding favorites to your collection as well as the JSX to give the root level of the application
+![SS3](./assets/SS3.png)<br>
+Frontend View:
+![SS4](./assets/SS4.png)<br>
+- ##### [ArtCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/ArtCard.jsx)
+For the ArtCard I contributed by adding CSS for styling, as well as additional logic to handle adding/removing a favorited item
+![SS5](./assets/SS5.png)<br>
+![SS6](./assets/SS6.png)<br>
+now to see what happens when you click to favorite an item
+
+- ##### [FavortieList](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteList.jsx)
+when you click to favorite a piece of art, it gets stored in state as an array of ```favorites```. those are then mapped over and each favorite then returns a ```FavoriteCard``` which you would see as a list in ```/favorties``` route.
+![SS8](./assets/SS8.png)<br>
+- ##### [FavortieCard](https://github.com/Keffdu/final-portfolio/blob/main/Front%20End%20Project/src/components/FavoriteCard.jsx)
+when FavoriteCard is called on each item, it returns this piece of JSX to be rendered in the list, populated with some data from the item.
+![SS7](./assets/SS7.png)<br>
+##### Frontend View Favorite List:
+![SS9](./assets/SS9.png)<br>
+##### Single Favorite Card:
+![SS10](./assets/SS10.png)<br>
+- #### Logic for handling favorites
+![SS11](./assets/SS11.png)<br>
+- you can see that ```removeFavorite``` takes a parameter of ```deleteArt``` which is the expected item to remove from the favorites list, so we filter over the favorites array to search for an object id that matches the one we passed in to the function, we then set the updated array as the new state and render it.
+- for ```handleFavorites``` I first had to check whether or not that item already existed in the favorites array or not - because we cant have an item favorited twice. if the item comes back as being valid, we update the existing state to include the new item.
+
 ## Technologies
 - List all technologies and versions here
 - Include dependencies and versions
 - Note any deployment tools as well
 
 ## Competencies
-### JF XX.XX
+### JF 1.1
 - List the full text of the job function first
 - Describe a situation where you demonstrated  this job function.
 - Summarize the actions you took to accomplish the goal. 
 - Emphasize the results of this action for your team or your learning. 
 - Connect the competentcy to this project
 
-### JF XX.XX
+### JF 1.6
+- List the full text of the job function first
+- Describe a situation where you demonstrated  this job function.
+- Summarize the actions you took to accomplish the goal. 
+- Emphasize the results of this action for your team or your learning. 
+- Connect the competentcy to this project
+
+### JF 2.2
 - List the full text of the job function first
 - Describe a situation where you demonstrated  this job function.
 - Summarize the actions you took to accomplish the goal. 
